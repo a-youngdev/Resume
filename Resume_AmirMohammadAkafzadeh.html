@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: #1e293b;
+            color: #fff;
+            padding: 30px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #94a3b8;
+            margin: 0 auto 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .sidebar p {
+            text-align: center;
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-bottom: 2px solid #38bdf8;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .sidebar ul li {
+            margin: 8px 0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .content h1 {
+            margin-top: 0;
+            font-size: 32px;
+            color: #0f172a;
+        }
+
+        .summary {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .skill-box h3 {
+            margin-top: 0;
+            color: #0284c7;
+        }
+
+        .skill-box ul {
+            padding-left: 20px;
+        }
+
+        .skill-box ul li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="container">
+    
+    <div class="sidebar">
+        <div class="profile-img" style="background-image: url(image/photo_2023-11-11_12-10-07.jpg);background-position: center;background-size: cover;"></div>
+        <h2 id="name">امیر محمد عکاف زاده</h2>
+        <p id="title">توسعه‌دهنده بک‌اند و هوش مصنوعی</p>
+
+        <div class="section-title" id="contact-title">تماس</div>
+        <ul id="contact-list">
+            <li>📞 تلفن: 09139580997</li>
+            <li>📧 ایمیل: amyrkaf94@gmail.com</li>
+            <li> مکان : ایران - اصفهان </li>
+        </ul>
+        <div class="section-title" id="contact-title">مشخصات شخصی</div>
+        <ul id="contact-list">
+            <li>تاریخ تولد : 1384/2/15</li>
+            <li>مدرک تحصیلی : لیسانس مهندسی کامپیوتر</li>
+            <li>سال ورود به دانشگاه  : 1402</li>
+            <li>مدارک فنی حرفه ای :C#-Python-pedagogy</li>
+        </ul>
+
+        <div class="section-title" id="languages-title">زبان‌ها</div>
+        <ul id="languages-list">
+            <li>فارسی — زبان مادری</li>
+            <li>انگلیسی — متوسط</li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 id="summary-title">خلاصه ای از حرفه ها</h1>
+        <div class="summary" id="summary-text" style="direction: rtl;">
+            توسعه‌دهنده نرم‌افزار با تمرکز بر توسعه بک‌اند با C# و ASP.NET.
+            تجربه در یادگیری ماشین و بینایی کامپیوتری با Python و مهارت در ساخت
+            ربات تلگرام، برنامه‌های ویندوز و سیستم‌های داده‌محور.
+        </div>
+
+        <h1 id="skills-title">مهارت‌ها</h1>
+        <div class="skills">
+            <div class="skill-box">
+                <h3 id="backend-title">توسعه بک‌اند</h3>
+                <ul id="backend-list">
+                    <li>C#</li>
+                    <li>ASP.NET / ASP.NET Core</li>
+                    <li>RESTful API</li>
+                    <li>Clean Architecture and Pub & Sub</li>
+                    <li>SQL Server</li>
+                    <li>SQL Lite</li>
+                    <li>WindowsForm app</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3 id="ml-title">یادگیری ماشین و بینایی کامپیوتری</h3>
+                <ul id="ml-list">
+                    <li>Python</li>
+                    <li>یادگیری ماشین</li>
+                    <li>بینایی کامپیوتری</li>
+                    <li>Scikit-learn</li>
+                    <li>Matplotlib</li>
+                    <li>OpenCV</li>
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3 id="other-title">سایر مهارت‌ها</h3>
+                <ul id="other-list">
+                    <li>توسعه ربات تلگرام (Python)</li>
+                    <li>برنامه ویندوز (C#)</li>
+                    <li>Unity (2D & 3D — پایه)</li>
+                    <li>HTML, CSS (متوسط)</li>
+                    <li>JavaScript (متوسط)</li>
+                    <li>Arduino & C/C++ (پایه)</li>
+                    <li>Git - Github</li>
+                    <li>اشنایی کم با سخت افزار</li>
+                    <li>اشنایی با کار های فنی</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <h3 id="other-title">رزومه</h3>
+                <ul id="other-list">
+                    <li>تدریس زبان برنامه نویسی C#</li>
+                    <li>تدریس زبان برنامه نویسی Python</li>
+                    <li>app Windows librarian</li>
+                    <li>ُسایت اموزشی Technologia</li>          
+                    <li>بات تلگرامی @Rahjooian_bot</li>
+                    <li>و دیگر بات های تلگرامی و سایت های کوچک...</li>
+                    <li>بازی های کوچک دو بعدی با پایتون و سی شارپ</li>
+                    <li>و.....</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer id="footer-text">
+            © امیر محمد عکاف زاده — رزومه
+        </footer>
+    </div>
+</div>
+
+ 
+</body>
+</html>
