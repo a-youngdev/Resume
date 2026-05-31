@@ -1,238 +1,231 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه | امیرمحمد عکاف‌زاده</title>
     <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8; /* یا رنگ دیگر مثل #22c55e برای سبز */
+            --border: #334155;
+        }
+
         body {
+            font-family: 'Tahoma', sans-serif; /* یا فونت دیگر */
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
             margin: 0;
-            font-family: "Segoe UI", Tahoma, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #333;
+            padding: 20px;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            display: flex;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .sidebar {
-            width: 320px;
-            background: #1e293b;
-            color: #fff;
-            padding: 30px;
-        }
-
-        .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: #94a3b8;
-            margin: 0 auto 20px;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 5px;
-        }
-
-        .sidebar p {
-            text-align: center;
-            font-size: 14px;
-            color: #cbd5f5;
-        }
-
-        .section-title {
-            margin-top: 30px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            border-bottom: 2px solid #38bdf8;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            font-size: 14px;
-        }
-
-        .sidebar ul li {
-            margin: 8px 0;
-        }
-
-        .content {
-            flex: 1;
-            padding: 40px;
-        }
-
-        .content h1 {
-            margin-top: 0;
-            font-size: 32px;
-            color: #0f172a;
-        }
-
-        .summary {
-            background: #f1f5f9;
-            padding: 20px;
-            border-radius: 12px;
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
             margin-bottom: 30px;
         }
 
-        .skills {
+        h1 { margin: 0; color: var(--accent); font-size: 2rem; }
+        .title { color: var(--text-muted); font-size: 1.1rem; margin-top: 5px; }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+        .contact-info a { color: var(--accent); text-decoration: none; }
+        .contact-info a:hover { text-decoration: underline; }
+
+        .section { margin-bottom: 30px; }
+        h2 { border-right: 4px solid var(--accent); padding-right: 15px; margin-bottom: 15px; font-size: 1.3rem; }
+
+        .grid-skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-card h3 { color: var(--accent); font-size: 0.95rem; margin-top: 0; }
+        .skill-card ul { list-style: none; padding: 0; font-size: 0.9rem; color: var(--text-muted); }
+        .skill-card li { margin-bottom: 5px; }
+
+        .project {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent);
+        }
+        .project h3 { margin-top: 0; color: var(--accent); font-size: 1.1rem; }
+        .project p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
+        .project .role { font-weight: bold; color: var(--text-main); }
+        .project .tech-tags { font-size: 0.8rem; color: var(--accent); font-weight: bold; margin-top: 10px; }
+        .project ul { margin-top: 10px; font-size: 0.9rem; color: var(--text-muted); padding-left: 20px; }
+        .project li { margin-bottom: 5px; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.5rem; }
+            .grid-skills { grid-template-columns: 1fr; }
+        }
+                header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
             gap: 20px;
         }
 
-        .skill-box {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        .header-text {
+            flex: 1;
         }
 
-        .skill-box h3 {
-            margin-top: 0;
-            color: #0284c7;
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
-        .skill-box ul {
-            padding-left: 20px;
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            h2 { border-right: none; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
         }
 
-        .skill-box ul li {
-            margin-bottom: 6px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .lang-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 16px;
-            background: #0284c7;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
- 
+
 <div class="container">
-    
-    <div class="sidebar">
-        <div class="profile-img" style="background-image: url(image/me3x4.jpg);background-position: center;background-size: cover;"></div>
-        <h2 id="name">امیر محمد عکاف زاده</h2>
-        <p id="title">توسعه‌دهنده بک‌اند و هوش مصنوعی</p>
-
-        <div class="section-title" id="contact-title">تماس</div>
-        <ul id="contact-list">
-            <li>📞 تلفن: 09139580997</li>
-            <li>📧 ایمیل: amyrkaf94@gmail.com</li>
-            <li> مکان : ایران - اصفهان </li>
-        </ul>
-        <div class="section-title" id="contact-title">مشخصات شخصی</div>
-        <ul id="contact-list">
-            <li>تاریخ تولد : 1384/2/15</li>
-            <li>مدرک تحصیلی : لیسانس مهندسی کامپیوتر</li>
-            <li>سال ورود به دانشگاه  : 1402</li>
-            <li>مدارک فنی حرفه ای :C#-Python-pedagogy</li>
-        </ul>
-
-        <div class="section-title" id="languages-title">زبان‌ها</div>
-        <ul id="languages-list">
-            <li>فارسی — زبان مادری</li>
-            <li>انگلیسی — متوسط</li>
-        </ul>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <h1 id="summary-title">خلاصه ای از حرفه ها</h1>
-        <div class="summary" id="summary-text" style="direction: rtl;">
-            توسعه‌دهنده نرم‌افزار با تمرکز بر توسعه بک‌اند با C# و ASP.NET.
-            تجربه در یادگیری ماشین و بینایی کامپیوتری با Python و مهارت در ساخت
-            ربات تلگرام، برنامه‌های ویندوز و سیستم‌های داده‌محور.
+       <header>
+        <div class="header-text">
+            <h1>امیرمحمد عکاف‌زاده</h1>
+            <div class="title">Backend Developer (.NET) | AI & CV Integration</div>
+            <div class="contact-info">
+                09139580997 | amyrkaf94@gmail.com <br>
+                <a href="https://github.com/a-youngdev/" target="_blank">GitHub</a> |
+                 
+                ربات: <a href="https://t.me/Rahjooian_bot" target="_blank">@Rahjooian_bot</a>
+            </div>
         </div>
+        <!-- نام فایل عکس خود را در src قرار دهید -->
+        <img src="image/me3x4.jpg" alt="امیرمحمد عکاف‌زاده" class="profile-img">
+    </header>
 
-        <h1 id="skills-title">مهارت‌ها</h1>
-        <div class="skills">
-            <div class="skill-box">
-                <h3 id="backend-title">توسعه بک‌اند</h3>
-                <ul id="backend-list">
-                    <li>C#</li>
-                    <li>ASP.NET / ASP.NET Core</li>
-                    <li>RESTful API</li>
-                    <li>Clean Architecture and Pub & Sub</li>
+
+    <section class="section">
+        <h2>خلاصه حرفه‌ای</h2>
+        <p style="text-align: justify; color: var(--text-muted);">
+            توسعه‌دهنده نرم‌افزار با تجربه در پیاده‌سازی بک‌اند (.NET) و هوش مصنوعی (Python). متخصص در معماری تمیز (Clean Architecture) و طراحی REST API. رویکرد من ترکیب پایداری بک‌اند با تحلیل‌های هوشمند است؛ به طوری که مدل‌های یادگیری ماشین (XGBoost) و پردازش تصویر (OpenCV) را به عنوان سرویس‌های متصل به سامانه‌های وب (FastAPI) ارائه می‌دهم. علاقه‌مند به توسعه راهکارهای یکپارچه و کاربردهای هوش مصنوعی در پزشکی.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>مهارت‌های تخصصی</h2>
+        <div class="grid-skills">
+            <div class="skill-card">
+                <h3>Backend & Web (.NET)</h3>
+                <ul>
+                    <li>ASP.NET Core Web API</li>
+                    <li>Clean Architecture & Pub/Sub</li>
+                    <li>C# Windows Forms</li>
+                    <li>Socket Programming</li>
                     <li>SQL Server</li>
-                    <li>SQL Lite</li>
-                    <li>WindowsForm app</li>
                 </ul>
             </div>
-
-            <div class="skill-box">
-                <h3 id="ml-title">یادگیری ماشین و بینایی کامپیوتری</h3>
-                <ul id="ml-list">
-                    <li>Python</li>
-                    <li>یادگیری ماشین</li>
-                    <li>بینایی کامپیوتری</li>
-                    <li>Scikit-learn</li>
-                    <li>Matplotlib</li>
-                    <li>OpenCV</li>
+            <div class="skill-card">
+                <h3>AI & Python</h3>
+                <ul>
+                    <li>FastAPI & REST API</li>
+                    <li>XGBoost & Machine Learning</li>
+                    <li>OpenCV (Computer Vision)</li>
+                    <li>Telegram/Bale Bot API</li>
+                    <li>SQLite</li>
                 </ul>
             </div>
-
-            <div class="skill-box">
-                <h3 id="other-title">سایر مهارت‌ها</h3>
-                <ul id="other-list">
-                    <li>توسعه ربات تلگرام (Python)</li>
-                    <li>برنامه ویندوز (C#)</li>
-                    <li>Unity (2D & 3D — پایه)</li>
-                    <li>HTML, CSS (متوسط)</li>
-                    <li>JavaScript (متوسط)</li>
-                    <li>Arduino & C/C++ (پایه)</li>
-                    <li>Git - Github</li>
-                    <li>اشنایی کم با سخت افزار</li>
-                    <li>اشنایی با کار های فنی</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3 id="other-title">رزومه</h3>
-                <ul id="other-list">
-                    <li>تدریس زبان برنامه نویسی C#</li>
-                    <li>تدریس زبان برنامه نویسی Python</li>
-                    <li>app Windows librarian</li>
-                    <li>ُسایت اموزشی</li>          
-                    <li>بات تلگرامی @Rahjooian_bot</li>
-                    <li>و دیگر بات های تلگرامی و سایت های کوچک...</li>
-                    <li>بازی های کوچک دو بعدی با پایتون و سی شارپ</li>
-                    <li>و.....</li>
+            <div class="skill-card">
+                <h3>Embedded & Tools</h3>
+                <ul>
+                    <li>C / C++ / Assembly</li>
+                    <li>HTML, CSS, JS, Ajax</li>
+                    <li>Git & GitHub</li>
+                    <li>(Familiar: MySQL)</li>
                 </ul>
             </div>
         </div>
+    </section>
 
-        <footer id="footer-text">
-            © امیر محمد عکاف زاده — رزومه
-        </footer>
-    </div>
+    <section class="section">
+        <h2>پروژه‌های کلیدی</h2>
+        
+        <article class="project">
+            <div class="role">توسعه‌دهنده صفر تا صد</div>
+            <h3>سامانه آموزشی (ربات تلگرام/بله + API)</h3>
+            <p>یکپارچه‌سازی ربات‌های پیام‌رسان با API وب‌سایت آموزشگاه برای نمایش اطلاعات دوره‌ها.</p>
+            <ul>
+                <li>دریافت داده دوره‌ها از طریق API و نمایش در ربات‌های تلگرام و بله.</li>
+                <li>پیاده‌سازی منطق سرویس‌دهی و یکپارچه‌سازی بین پلتفرم‌ها.</li>
+            </ul>
+            <div class="tech-tags">Python, FastAPI, Telegram Bot, Bale Bot, REST API, SQLite</div>
+        </article>
+
+        <article class="project">
+            <div class="role">توسعه‌دهنده بک‌اند (API)</div>
+            <h3>API آموزشگاه (ASP.NET Core)</h3>
+            <p>طراحی و پیاده‌سازی بک‌اند و REST API برای مدیریت و ارائه اطلاعات دوره‌ها.</p>
+            <ul>
+                <li>ساختاردهی پروژه با Clean Architecture.</li>
+                <li>مدیریت پایگاه داده SQL Server.</li>
+            </ul>
+            <div class="tech-tags">C#, ASP.NET Core Web API, Clean Architecture, SQL Server</div>
+        </article>
+
+        <article class="project">
+            <div class="role">توسعه‌دهنده صفر تا صد</div>
+            <h3>کتابخانه مدل پیش‌بینی قیمت مسکن</h3>
+            <p>توسعه مدل XGBoost و بسته‌بندی آن به عنوان یک کتابخانه پایتونی قابل استفاده مجدد.</p>
+            <ul>
+                <li>آموزش و ارزیابی مدل ML.</li>
+                <li>پیاده‌سازی جریان کامل Train/Test/Predict.</li>
+            </ul>
+            <div class="tech-tags">Python, XGBoost, Scikit-learn, ML Pipeline</div>
+        </article>
+
+        <article class="project">
+            <div class="role">طراح و پیاده‌ساز</div>
+            <h3>سیستم چت کتابخانه (شبکه داخلی)</h3>
+            <p>سامانه ارتباطی تحت شبکه برای کامپیوترهای کتابخانه با قابلیت چت مستقیم.</p>
+            <ul>
+                <li>پیاده‌سازی ارتباط با Socket Programming در Windows Forms.</li>
+                <li>طراحی معماری Client/Server.</li>
+            </ul>
+            <div class="tech-tags">C#, Windows Forms, Socket Programming, SQL Server</div>
+        </article>
+    </section>
 </div>
 
- 
 </body>
 </html>
-
-
